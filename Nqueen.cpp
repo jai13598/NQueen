@@ -1,12 +1,12 @@
 #include<iostream>
 using namespace std;
 bool can_we_place(int board[10][10],int i,int j,int n){
-	for(int l=0;l<n;l++){//row and col check
+	for(int l=0;l<n;l++){//row and col check where any Queen exist
 		if(board[i][l] || board[l][j]){
 			return false;
 		}
 	}
-	int row=i;//right diognol
+	int row=i;//right diognol check where any Queen exist 
 	int col=j;
 	while(i>=0 && j<n){
 		if(board[i][j]){
@@ -17,7 +17,7 @@ bool can_we_place(int board[10][10],int i,int j,int n){
 	}
 	i=row;
 	j=col;
-	while(i>=0 &&j>=0){//left diognol
+	while(i>=0 &&j>=0){//left diognol where any Queen exist
 		if(board[i][j]){
 			return false;
 		}
